@@ -1,0 +1,773 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+@font-face {
+  font-family: Tangerine;
+  src: url(../webfonts/Tangerine.ttf);
+  font-family: SourceSerif4;
+  src: url(../webfonts/SourceSerif4.ttf);
+}
+
+/* 重置所有標籤的樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+  font-family:
+    /*西文*/
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+    /*中文*/
+    "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  text-decoration: none;
+}
+
+:root {
+  /* 主色調 */
+  --black: #070600;
+  --White: #F7F7FF;
+  --pink: #EA526F;
+  --blue:#23B5D3;
+
+  --White_02: rgb(255, 255, 255, .1);
+  --White_07: rgb(255, 255, 255, .8);
+  --pink2: rgb(234, 82, 111,.3);
+  --black-White: rgba(9, 7, 7, 0) 30%,  #070600 50%;
+
+
+
+}
+
+/* 從此處開始 */
+body {
+  background-color: var(--black);
+  color: var(--White);
+  font-family: "Tangerine","sans-serif";
+
+}
+
+#index .indexitem {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 文字 */
+h2 {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 18.6vw;
+  color: var(--White);
+  line-height: 0.6;
+  transition: 1s;
+}
+
+
+h3 {
+  font-family: SourceSerif4;
+  letter-spacing: 0.3rem;
+  font-size: 1.8vw;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.5vw;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  /* line-height :1; */
+}
+.contentTitle p{
+  padding: 7px 0 7px 0;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+p{
+  font-size: 1.2vw;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 2vw;
+}
+
+/* 文字大box */
+.box {
+  width: 22%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  color: var(--pink);
+  left: 5%;
+}
+
+.subSlogan {
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  z-index: 888;
+  color: var(--pink);
+  top: 36%;
+  right: -5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+}
+
+/* 單行文字容器 */
+.box .title,
+.box .role,
+.box .role1,
+.subSlogan .role,
+.subSlogan .role1 {
+  position: absolute;
+}
+
+.box .title,
+.box .role,
+.box .role1 {
+  /* 文字改垂直書寫,從左到右 */
+  writing-mode: vertical-lr;
+  /* 跟隨文字的寬度 */
+  width: fit-content;
+}
+
+.box .title {
+  top: 7%;
+  left: 2%;
+}
+
+.box .role,
+.box .role1 {
+  height: auto;
+  top: 7%
+}
+
+.subSlogan .role,
+.subSlogan .role1 {
+  width: auto;
+  height: fit-content;
+}
+
+.box .role {
+  left: 50%;
+}
+
+.box .role1 {
+  right: 0%;
+}
+
+.subSlogan .role {
+  top: 0%;
+}
+
+.subSlogan .role1 {
+  top: 50%;
+}
+
+/* 文字底色 */
+.box .title .block,
+.box .role .block,
+.box .role1 .block,
+.subSlogan .role .block,
+.subSlogan .role1 .block {
+  width: 0%;
+  height: inherit;
+  background: var(--pink);
+  position: absolute;
+}
+
+.box .title .block,
+.box .role .block,
+.box .role1 .block {
+  animation: mainBlock 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.subSlogan .role .block,
+.subSlogan .role1 .block {
+  animation: secBlock 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.box .title .block {
+  display: flex;
+}
+
+/* 底色的延後秒數 */
+.box .role .block {
+  animation-delay: 1s;
+}
+
+.box .role1 .block {
+  animation-delay: 1s;
+}
+
+.subSlogan .role .block {
+  animation-delay: 2s;
+}
+
+.subSlogan .role1 .block {
+  animation-delay: 2s;
+}
+
+/* 文字 */
+.indexitem h2 {
+  color: rgb(255, 255, 255, .4);
+}
+
+.indexitem h2:hover {
+  color: rgb(255, 255, 255, .9);
+}
+
+.subSlogan h4 {
+  letter-spacing: .6rem;
+}
+
+.box .title h3,
+.box .role h4,
+.box .role1 h4,
+.subSlogan .role h4,
+.subSlogan .role1 h4 {
+  animation: FadeIn 1s forwards;
+  opacity: 0;
+}
+
+.box .title h3 {
+  animation-delay: 0.5s;
+}
+
+.box .role h4 {
+  animation-delay: 1.5s;
+}
+
+.box .role1 h4 {
+  animation-delay: 1.5s;
+}
+
+.subSlogan .role h4 {
+  animation-delay: 2.5s;
+}
+
+.subSlogan .role1 h4 {
+  animation-delay: 2.5s;
+}
+
+
+
+/* 首頁開始 */
+.indexMenu ul {
+  width: 45%;
+  height: 80%;
+  position: relative;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aboutIndex,
+.wordIndex,
+.contactIndex {
+  opacity: 0;
+  animation: FadeIn 3s forwards;
+  animation-delay: 3s;
+}
+
+li .aboutIndex {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+li .wordIndex {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+
+}
+
+li .contactIndex {
+  position: absolute;
+  top: 64%;
+  left: 0%;
+}
+
+/* 導覽列 */
+.menuBar {
+  background-image: linear-gradient(to right, var(--black-White));
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  right: 0%;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 50px 0 50px;
+}
+
+.mainMenu ul {
+  display: flex;
+  align-items: baseline;
+
+}
+
+.mainMenu ul li a {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 4vw;
+  color: var(--White);
+  line-height: 0.6;
+  margin: 0 0 0 60px;
+  transition: .35s;
+}
+.mainMenu ul li a:hover{
+  color:var(--pink)
+}
+
+.secondaryMenu {
+  width: fit-content;
+  height: 100vh;
+  left: 50px;
+  position: fixed;
+  writing-mode: vertical-lr;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 999;
+  padding: 20vh 0 0 0;
+}
+
+.secondaryMenu ul {
+  display: flex;
+}
+
+.secondaryMenu ul li a {
+  color: var(--White);
+  margin: 2vh 0 2vh 0;
+  font-size: 1.2vw;
+  letter-spacing: 0.3rem;
+  transition: .35s;
+  line-height: 2rem;
+}
+.secondaryMenu ul li a:hover{
+  color: var(--blue);
+}
+
+
+
+/* About */
+.watermark,
+.watermarkA {
+  writing-mode: vertical-lr;
+  position: fixed;
+  top: -43%;
+  left: -3%;
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 33vw;
+  color: var(--White_02);
+  line-height: 0.6;
+}
+.watermarkB{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 10vw;
+  color: var(--White_02);
+  line-height: 0.6;
+}
+.introduction,
+.workExperience,
+.softwareSkills {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  top: 10vh;
+  overflow: hidden;
+}
+.textArea {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  padding: 13vh 0 13vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around}
+
+.contentBox {
+  width: 50%;
+  height: 90vh;
+  position: absolute;
+  right: 0%;
+  padding: 15vh 0 15vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contentBoxB{
+  width: 61.5%;
+  height: 90vh;
+  position: absolute;
+  right: 0%;
+  padding: 0 50px 0 0; 
+  display: flex;
+  align-items: center;
+  font-family: 微軟正黑體;
+  line-height: 1.5vh;
+}
+
+.iconText {
+  display: flex;
+  align-items: flex-end;
+  margin: 10px 0 10px 0;
+  font-family: 微軟正黑體;
+
+}
+
+.aboutIcon {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+}
+
+.cb_content {
+  width: 80%;
+}
+
+
+.decorate{
+  display: flex;
+  width: 5%;
+  justify-content: flex-end;
+  position: relative;
+}
+.decorate .circle{
+  display: block;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  background-color:var(--White);
+  margin: 12px 0 0 0 ;
+}
+.string{
+    width: 1px;
+    height:54%;
+    background-color: var(--White);
+    z-index: 3;
+    left: 3.7%;
+    position: absolute;
+
+    top: 16vh;
+}
+.ta_Horizontal{
+  display: flex;
+}
+.careerContent{
+ width: 80%;
+}
+.year{
+  font-family:微軟正黑體 ;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+.year p{
+  padding: 7px 0 7pt 0;
+}
+.contentText{
+padding: 0 0 10px 0;
+}
+
+/* word */
+.watermarkA{
+  top:-16%
+}
+
+.work::-webkit-scrollbar{
+  display: none;
+}
+
+.w_Decorate{
+  width: 100vw;
+  height: 100vh;
+
+}
+.w_Decorate .watermark{
+  top: -18%;
+}
+.workMenu ul{
+  white-space:nowrap;
+  position: absolute;
+  text-align: right;
+  right: 0%;
+  padding: 70px 50px 70px 0;
+  width: 50%;
+}
+.workMenu ul li a {
+  font-family: Tangerine;
+  font-weight: 600;
+  font-size: 12vw;
+  color: rgb(255, 255, 255, .4);
+  line-height: 1;
+  transition:1s;
+}
+.workMenu ul li a:hover{
+  color:var(--White);
+}
+
+
+
+.web::before,
+.books::before,
+.vision::before,
+.project::before {
+  background-color: var(--pink);
+  font-size: 1.2vw;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  right: 8%;
+  padding: 9.5px 25px 4px 25px;
+
+  color: var(--White);
+}
+.web::before{
+  content: '網站規劃';
+  top: 12%;
+
+}
+.books::before{
+  content: '書籍編排';
+  top: 56%;
+}
+.vision::before{
+  content: '視覺設計';
+  top: 34%;
+}
+.project::before{
+  content: '大型專案';
+  top: 78%;
+}
+
+
+.workWeb,
+.WorksColumn{
+  width: 100%;
+  height: 90vh;
+}
+.workWeb{
+  position: relative;
+  top: 10vh;
+}
+.WorksColumn{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.columnBox{
+  width: 25%;
+  height: 70%;
+  border: 1.5px solid var(--White);
+  box-shadow:0 15px 20px 5px var(--pink2) ;
+    margin: 0 15px 0 15px;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.columnCover{
+  width: 100%;
+  height: 39%;
+  border-radius: 7.5px;
+  background-image: url(../images/Web/VSERCover.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.columnCopywriting{
+  width: 100%;
+  height: 40%;
+}
+.columnicon{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+}
+.columnicon a{
+  height: 100%;
+  width: 15%;
+  margin: 0 5px 0 5px;
+  background-color: #bfb476;
+}
+.columnTitle {
+  padding: 0 0 7px;
+}
+
+/* word */
+/* .work{
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+position: relative;
+}
+.workMenu{
+  height: 90vh;
+} */
+.work{
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  position: relative;
+  overflow: scroll;
+  display: flex;
+  padding: 0px 50px 30px 130px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.worksArea{
+  width: 100%;
+    height: 100%;
+    padding: 0 70px 0 0;
+}
+.worksField {
+  position: relative; /* 為了讓偽元素相對定位 */
+  border-bottom: 1px solid var(--White);
+  margin-bottom: 1.5vw;
+  padding:0 1vw 1vw 1vw;
+  display: flex;
+  flex-direction: column;
+}
+/* .worksField:nth-child(1),
+.worksField:nth-child(4){
+  padding:0 1vw 1vw 0;
+}
+.worksField:nth-child(3),
+.worksField:nth-child(6){
+  padding:0 0 1vw 1vw;
+} */
+.worksField:nth-child(n+7) {
+  display: none; /* 隱藏第六個元素 */
+}
+
+/* 使用偽元素來控制右邊框的長度 */
+.worksField::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 1vw); /* 比本身高度少1vw */
+  width: 1px;
+  background-color: var(--White); /* 替代border-right */
+}
+
+/* .worksField:nth-child(3n)::after {
+  display: none;
+} */
+
+.workCover{
+  width: 100%;
+  height: 90%;
+  margin: 0 0 0.7vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255,.1);
+}
+.CoverA_1{
+  background-image: url(../images/Web/VSERCover.jpg);
+}
+.CoverA_2{
+  background-image: url(../images/Web/x13Cover.jpg);
+}
+
+.workIntroduction{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+
+}
+.workIcon{
+  width: 30%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+}
+.github{
+  background-image: url(../images/Web/icon_github.svg);
+  transition: .35s;
+}
+.github:hover{
+  background-image: url(../images/Web/icon_github_hover.svg);
+}
+.world{
+  background-image: url(../images/Web/icon_world.svg);
+  transition: .35s;
+}
+.world:hover{
+  background-image: url(../images/Web/icon_world_hover.svg);
+}
+.ppt{
+  background-image: url(../images/Web/icon_ppt.svg);
+  transition: .35s;
+}
+.ppt:hover{
+  background-image: url(../images/Web/icon_ppt_hover.svg);
+}
+.icon{
+margin:0 0 0 0.5vw ;
+background-position: center;
+/*下面四張圖置中裁切*/
+background-size: contain;
+background-repeat: no-repeat;
+
+}
+
+.worksFieldBox{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 90%;
+  font-family: 微軟正黑體;
+}
+
+
+
+
